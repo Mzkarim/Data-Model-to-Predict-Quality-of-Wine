@@ -13,15 +13,15 @@ In this project we applied machine learning algorithm to determine the quality o
 *  Performed 10 Fold Cross Validation 
 *  Measured model performance through Confusion Matrix
 
-####  Details Procedures:  
+####  Detail Procedures:  
 
-**TASK 1 :** Convert data in excel  file
+**TASK 1 :** Converted data in excel  file
 
-**TASK 2 :**  Import data into R environment
+**TASK 2 :**  Imported data into R environment
 
-**TASK 3 :** Check characteristics and data relationship
+**TASK 3 :** Checked characteristics and data relationship
 
-* **Check data characteristics with following codes** 
+* **Checked data characteristics with following codes** 
                   
                   head(winequality)
 
@@ -44,20 +44,20 @@ In this project we applied machine learning algorithm to determine the quality o
 
 **Findings :** There is no missing values exist in the dataset as set has already been cleaned
 
-* **Perform  following correlation** 
+* **Performed  following correlation** 
 
-1.	**Check correlation among variables**	
+1.	**Checked correlation among variables**	
 
                  cor(winequality[,unlist(lapply(winequality, is.numeric))])	
 
-2.	**Check  correlations  and  significance  levels  with  pearson 	and  spearman.  Correlation
+2.	**Checked  correlations  and  significance  levels  with  pearson and  spearman.  Correlation
 	coefficients for all possible pairs of columns of a matrix.**	
 
                   library(Hmisc)
 
                   rcorr(as.matrix(winequality), type=c("pearson", "spearman"))
 
-3. **Visualize data**
+3. **Visualized data**
 
                   library(corrplot)
 
@@ -67,12 +67,12 @@ In this project we applied machine learning algorithm to determine the quality o
                   
 *	**Preprocessing data** 
 
-1. **Convert characteristics of Predicted variable from integer to numeric** 
+1. **Converted characteristics of Predicted variable from integer to numeric** 
 
                    winequality$qualiy <- as.numeric(winequality$qualiy) str(winequality)
                    redwine<-winequality
 
-2.	**Convert Predicted variable from multi-class to binary class**
+2.	**Converted Predicted variable from multi-class to binary class**
 
                     redwine$qualiy[redwine$qualiy <= 5] <- 1 
                     
@@ -84,7 +84,7 @@ In this project we applied machine learning algorithm to determine the quality o
 
                     (score: <=5)& low=0(score>5)
 
-3.  **Change class of Predicted variable from numeric to factor** 
+3.  **Changed class of Predicted variable from numeric to factor** 
 
             redwine$qualiy <- as.factor(redwine$qualiy) str(redwine)
             
@@ -92,9 +92,9 @@ In this project we applied machine learning algorithm to determine the quality o
 
 ### TASK 5 :  Algorithms and Experiment
 
-**Perform Logistic Regression, “rWeka” package has been using here**
+**Performed Logistic Regression, “rWeka” package has been using here**
 
-* Use R Formula before run the model, no need to write variables. names every time
+* Used R Formula before run the model, no need to write variables. names every time
 
 * Fit checks if model on the same data
 
